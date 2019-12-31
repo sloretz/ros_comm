@@ -40,6 +40,40 @@ endif()
 
 catkin_package()
 
+# Install scripts so shebangs are rewritten to match ROS_PYTHON_VERSION
+catkin_install_python(
+  PROGRAMS
+    nodes/freq_talker
+    nodes/listener.py
+    nodes/listener_once.py
+    nodes/listenerpublisher.py
+    nodes/listenerpublisher_embed.py
+    nodes/publish_on_shutdown.py
+    nodes/talker
+    nodes/talker.py
+    test/rostest/add_two_ints_server
+    test/rostest/fail_two_ints_server
+    test/rostest/fake_time.py
+    test/rostest/test_basic_services.py
+    test/rostest/test_client_param_api.py
+    test/rostest/test_client_param_server.py
+    test/rostest/test_deregister.py
+    test/rostest/test_embed_msg.py
+    test/rostest/test_empty_service.py
+    test/rostest/test_latch.py
+    test/rostest/test_latch_unsubscribe.py
+    test/rostest/test_node.py
+    test/rostest/test_node_api.py
+    test/rostest/test_on_shutdown.py
+    test/rostest/test_pubsub_order.py
+    test/rostest/test_rospy_client_online.py
+    test/rostest/test_rospy_timer_online.py
+    test/rostest/test_service_failure.py
+    test/rostest/test_service_order.py
+    test/rostest/test_sub_to_multiple_pubs.py
+    test/rostest/test_topic_statistics.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+
 if(CATKIN_ENABLE_TESTING)
   catkin_add_nosetests(test/unit)
 
