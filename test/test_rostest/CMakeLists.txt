@@ -8,7 +8,9 @@ catkin_package()
 
 # Install scripts so shebangs are rewritten to match ROS_PYTHON_VERSION
 catkin_install_python(
-  PROGRAMS test_nodes/talker.py
+  PROGRAMS
+    test/just_advertise.py
+    test_nodes/talker.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
 
 if(CATKIN_ENABLE_TESTING)

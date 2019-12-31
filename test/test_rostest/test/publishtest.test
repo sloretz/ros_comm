@@ -11,7 +11,7 @@
   </node>
 
   <node name="talker_2"
-        pkg="test_rostest" type="just_advertise">
+        pkg="test_rostest" type="just_advertise.py">
     <rosparam>
       msg_name: std_msgs/String
     </rosparam>
